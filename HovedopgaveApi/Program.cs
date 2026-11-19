@@ -20,13 +20,11 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<BlaaBogDBContext>();
-    try
-    {
-        if (dbContext.Database.CanConnect())
-        {
 
+        if (!dbContext.Database.CanConnect())
+        {
+            throw new NotImplementedException("Can't connect to db");
         }
-    }
 }
 
 // Configure the HTTP request pipeline.

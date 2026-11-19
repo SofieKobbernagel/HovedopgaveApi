@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RestBlaaBogLib;
 
 namespace HovedopgaveApi.Controllers
@@ -16,7 +17,11 @@ namespace HovedopgaveApi.Controllers
         [HttpGet]
         public IActionResult GetAllSchools()
         {
-            var schools = _dbContext.skole.ToList();
+            var schools = _dbContext.Skole
+                .Include(s => s.Emails)
+                .Include(s => s.Telefoner)
+                .Include(s => s.Images)
+                .ToList();
             return Ok(schools);
         }
     }
