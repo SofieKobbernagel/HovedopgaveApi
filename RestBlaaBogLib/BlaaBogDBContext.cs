@@ -17,5 +17,6 @@ namespace RestBlaaBogLib
         public DbSet<Images> Images { get; set; }
         public DbSet<Website> HjemmesideLink { get; set; }
         public DbSet<Secretary> Sekretariatet {  get; set; }
+        public DbSet<SecretaryRole> SecretaryRole { get; set; }
     }
 }

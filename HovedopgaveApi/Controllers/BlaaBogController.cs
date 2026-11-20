@@ -30,9 +30,11 @@ namespace HovedopgaveApi.Controllers
         [HttpGet("secretariat")]
         public IActionResult GetSecretari()
         {
-            var secretari = _dbContext.Sekretariatet;
+            var secretary = _dbContext.Sekretariatet
+                .Include(s => s.Role)
+                .ToList();
 
-            return Ok(secretari);
+            return Ok(secretary);
         }
     }
 }

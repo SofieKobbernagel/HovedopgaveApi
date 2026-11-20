@@ -10,16 +10,11 @@ namespace RestBlaaBogLib
     {
         [Key]
         [Column("Id")]
-        [Required]
         public int ID { get; set; }
 
         [Column("name")]
-        [Required] 
-        public string Name { get; set; } = string.Empty;
-
-        [Column("role")]
         [Required]
-        public string Role { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [Column("phone")]
         public string? Phone { get; set; }
@@ -32,14 +27,19 @@ namespace RestBlaaBogLib
 
         [Column("profilePicture")]
         public string? ProfilePic { get; set; }
+        
+        [Column("roleId")]
+        public int RoleId { get; set; }
+
+        [ForeignKey(nameof(RoleId))]
+        public SecretaryRole Role { get; set; } = null!;
 
         public Secretary() {}
 
-        public Secretary(int id, string name, string role, string phone, string email, string description, string pic)
+        public Secretary(int id, string name, string phone, string email, string description, string pic)
         {
             ID = id;
             Name = name;
-            Role = role;
             Phone = phone;
             Email = email;
             Description = description;
