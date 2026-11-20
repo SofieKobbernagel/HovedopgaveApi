@@ -11,9 +11,10 @@ namespace RestBlaaBogLib
         public int ID { get; set; }
 
         [Column("emailAddress")]
-        public string EmailAddress { get; set; }
+        [Required]
+        public string EmailAddress { get; set; } = string.Empty;
 
         [JsonIgnore]
-        public School? Skole { get; set; }
+        public School Skole { get; set; } = null!;
     }
 }

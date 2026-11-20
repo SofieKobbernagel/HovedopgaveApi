@@ -9,20 +9,30 @@ namespace HovedopgaveApi.Controllers
     public class BlaaBogController : Controller
     {
         private readonly BlaaBogDBContext _dbContext;
-        public BlaaBogController(BlaaBogDBContext dbContext) 
+        public BlaaBogController(BlaaBogDBContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        [HttpGet]
+        [HttpGet("schools")]
         public IActionResult GetAllSchools()
         {
             var schools = _dbContext.Skole
-                .Include(s => s.Emails)
-                .Include(s => s.Telefoner)
-                .Include(s => s.Images)
+                .Include(s => s.Navn)
+                .Include(s => s.Email)
+                .Include(s => s.Telefon)
+                .Include(s => s.Image)
+                .Include(s => s.HjemmesideLink)
                 .ToList();
             return Ok(schools);
+        }
+
+        [HttpGet("secretariat")]
+        public IActionResult GetSecretari()
+        {
+            var secretari = _dbContext.Sekretariatet;
+
+            return Ok(secretari);
         }
     }
 }

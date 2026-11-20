@@ -12,36 +12,47 @@ namespace RestBlaaBogLib
     {
         [Key]
         [Column("ID")]
+        [Required]
         public int ID { get; set; }
 
         [Column("address")]
-        public string Address { get; set; }
+        [Required]
+        public string Address { get; set; } = string.Empty;
 
         [Column("zipCode")]
+        [Required]
         public int ZipCode { get; set; }
 
         [Column("city")]
-        public string City { get; set; }
+        [Required]
+        public string City { get; set; } = string.Empty;
 
         [Column("region")]
-        public string Region { get; set; }
+        [Required]
+        public string Region { get; set; } = string.Empty;
 
         [Column("yearFounded")]
+        [Required]
         public int YearFounded { get; set; }
 
         [Column("gradeStart")]
-        public string GradeStart { get; set; }
+        [Required]
+        public string GradeStart { get; set; } = string.Empty;
 
         [Column("gradeEnd")]
-        public string GradeEnd { get; set; }
+        [Required]
+        public string GradeEnd { get; set; } = string.Empty;
 
         [Column("numberOfClasses")]
+        [Required]
         public int NumberOfClasses { get; set; }
 
         [Column("classQuotient")]
-        public String ClassQuotient { get; set; }
+        [Required]
+        public string ClassQuotient { get; set; } = string.Empty;
 
         [Column("numberOfStudents")]
+        [Required]
         public int NumberOfStudents { get; set; }
 
         [Column("numberOfStudentsInSFO")]
@@ -54,17 +65,19 @@ namespace RestBlaaBogLib
         public string? DescriptionText { get; set; }
 
         [Column("latitude")]
+        [Required]
         public decimal Latitude { get; set; }
 
         [Column("longitude")]
+        [Required]
         public decimal Longitude { get; set; }
 
         // Navigation properties
-        public ICollection<Navn> Navne { get; set; } = new List<Navn>();
-        public ICollection<Email> Emails { get; set; } = new List<Email>();
-        public ICollection<Telefon> Telefoner { get; set; } = new List<Telefon>();
-        public ICollection<Images?> Images { get; set; } = new List<Images?>();
-        public ICollection<HjemmesideLink> HjemmesideLinks { get; set; } = new List<HjemmesideLink>();
+        public Name Navn { get; set; } = null!;
+        public Email Email { get; set; } = null!;
+        public Phone Telefon { get; set; } = null!;
+        public Images Image { get; set; } = null!;
+        public Website HjemmesideLink { get; set; } = null!;
 
         public School() { }
 

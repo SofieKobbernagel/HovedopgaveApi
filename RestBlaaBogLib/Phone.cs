@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace RestBlaaBogLib
 {
-    public class Telefon
+    public class Phone
     {
         [Key]
         [ForeignKey(nameof(Skole))]
