@@ -17,7 +17,7 @@ namespace RestBlaaBogLib
 
         [Column("address")]
         [Required]
-        public string Address { get; set; } = string.Empty;
+        public string Address { get; set; }
 
         [Column("zipCode")]
         [Required]
@@ -25,11 +25,11 @@ namespace RestBlaaBogLib
 
         [Column("city")]
         [Required]
-        public string City { get; set; } = string.Empty;
+        public string City { get; set; }
 
         [Column("region")]
         [Required]
-        public string Region { get; set; } = string.Empty;
+        public string Region { get; set; }
 
         [Column("yearFounded")]
         [Required]
@@ -37,11 +37,11 @@ namespace RestBlaaBogLib
 
         [Column("gradeStart")]
         [Required]
-        public string GradeStart { get; set; } = string.Empty;
+        public string GradeStart { get; set; }
 
         [Column("gradeEnd")]
         [Required]
-        public string GradeEnd { get; set; } = string.Empty;
+        public string GradeEnd { get; set; } 
 
         [Column("numberOfClasses")]
         [Required]
@@ -49,7 +49,7 @@ namespace RestBlaaBogLib
 
         [Column("classQuotient")]
         [Required]
-        public string ClassQuotient { get; set; } = string.Empty;
+        public string ClassQuotient { get; set; } 
 
         [Column("numberOfStudents")]
         [Required]

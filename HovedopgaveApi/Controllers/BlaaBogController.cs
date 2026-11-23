@@ -36,5 +36,15 @@ namespace HovedopgaveApi.Controllers
 
             return Ok(secretary);
         }
+
+        [HttpGet("board")]
+        public IActionResult GetBoardMembers()
+        {
+            var boardMembers = _dbContext.BoardMember
+                .Include(s => s.Role)
+                .ToList();
+
+            return Ok(boardMembers);
+        }
     }
 }
