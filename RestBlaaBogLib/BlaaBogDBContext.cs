@@ -20,5 +20,6 @@ namespace RestBlaaBogLib
         public DbSet<SecretaryRole> SecretaryRole { get; set; }
         public DbSet<BoardMember> BoardMember { get; set; }
         public DbSet<BoardMemberRole> BoardMemberRole { get; set; }
+        public DbSet<City> City { get; set; }
     }
 }

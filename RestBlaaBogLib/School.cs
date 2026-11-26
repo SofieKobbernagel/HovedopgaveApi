@@ -23,10 +23,6 @@ namespace RestBlaaBogLib
         [Required]
         public int ZipCode { get; set; }
 
-        [Column("city")]
-        [Required]
-        public string City { get; set; }
-
         [Column("region")]
         [Required]
         public string Region { get; set; }
@@ -78,10 +74,12 @@ namespace RestBlaaBogLib
         public Phone Telefon { get; set; } = null!;
         public Images Image { get; set; } = null!;
         public Website HjemmesideLink { get; set; } = null!;
+        public City City { get; set; } = null!;
+
 
         public School() { }
 
-        public School(int id, string address, int zip, string city, string region,
+        public School(int id, string address, int zip, string region,
             int yearFounded, int numberOfClasses, string gradestart, string gradeEnd,
             string classQuotient, int numberOfStudents, int numberOfStudentsInSFO, string titleText,
             string descriptionText, decimal latitude, decimal longitude)
@@ -89,7 +87,6 @@ namespace RestBlaaBogLib
             ID = id;
             Address = address;
             ZipCode = zip;
-            City = city;
             Region = region;
             YearFounded = yearFounded;
             NumberOfClasses = numberOfClasses;

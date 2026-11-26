@@ -23,6 +23,7 @@ namespace HovedopgaveApi.Controllers
                 .Include(s => s.Telefon)
                 .Include(s => s.Image)
                 .Include(s => s.HjemmesideLink)
+                .Include(s => s.City)
                 .ToList();
             return Ok(schools);
         }
