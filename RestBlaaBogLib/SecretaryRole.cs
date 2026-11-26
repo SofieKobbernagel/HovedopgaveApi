@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RestBlaaBogLib
 {
-    [Table("Work")]
+    [Table("SecretaryRole")]
     public class SecretaryRole
     {
         [Key]
