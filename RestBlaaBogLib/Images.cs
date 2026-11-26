@@ -11,7 +11,7 @@ namespace RestBlaaBogLib
         public int ID { get; set; }
 
         [Column("ImageUrl")]
-        public string ImageUrl { get; set; }
+        public byte[] ImageUrl { get; set; }
 
         [JsonIgnore]
         public School Skole { get; set; }
