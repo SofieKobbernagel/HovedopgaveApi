@@ -81,7 +81,7 @@ namespace RestBlaaBogLib
 
         public School(int id, string address, int zip, string region,
             int yearFounded, int numberOfClasses, string gradestart, string gradeEnd,
-            string classQuotient, int numberOfStudents, int numberOfStudentsInSFO, string titleText,
+            string classQuotient, int numberOfStudents, int? numberOfStudentsInSFO, string titleText,
             string descriptionText, decimal latitude, decimal longitude)
         {
             ID = id;
